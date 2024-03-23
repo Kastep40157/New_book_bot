@@ -1,3 +1,4 @@
+# Файл отвечает за начальную конфигурацию БОТа
 from dataclasses import dataclass
 from environs import Env
 
