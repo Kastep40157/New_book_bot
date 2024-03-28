@@ -9,4 +9,8 @@ router = Router()
 async def process_start_command(message: Message):
     await message.answer(LEXICON[message.text])
 
+@router.message (Command)
+async def process_help_command(message: Message):
+    await message.answer(LEXICON[message.text])
+
 
