@@ -13,20 +13,19 @@ book: dict[int, str] = {}
 
 # Функция, возвращающая строку с текстом страницы и ее размер
 def _get_part_text(text: str, start: int, size: int) -> tuple[str, int]:
-    end_point =',.!:;?'
+    end_point = ',.!:;?'
     last_size = size
     if len(text) <= size + start:
         last_size = len(text) - start
     else:
-        for i in range (size + start - 1, start, -1):
+        for i in range(size + start - 1, start, -1):
             if text[i] in end_point and text[i + 1] not in end_point:
                 break
             last_size -= 1
     return text[start: start + last_size], last_size
 
 
-
-def prepare_book (path: str) -> None:
+def prepare_book(path: str) -> None:
    with open(file=BOOK_PATH, mode='r') as file:
        text = file.read()
        start, page_number = 0, 1
@@ -37,8 +36,5 @@ def prepare_book (path: str) -> None:
            page_number += 1
 
 
-
-
-
-
-print(prepare_book(BOOK_PATH))
+# Вызов функции prepare_book для подготовки книги из текстового файла
+prepare_book(os.path.join(sys.path[0], os.path.normpath(BOOK_PATH)))
