@@ -2,6 +2,7 @@ from aiogram import F, Router
 from aiogram.types import Message
 from aiogram.filters import CommandStart, Command
 from lexicon.lexicon_ru import LEXICON
+from keyboards.pagination_kb import create_pagination_keyboard
 router = Router()
 
 
