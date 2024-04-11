@@ -5,7 +5,7 @@
 import os
 import sys
 
-BOOK_PATH = '../books/book.txt'
+BOOK_PATH = 'book/Bredberi_Marsianskie-hroniki.txt'
 BOOK_SIZE = 1050
 
 book: dict[int, str] = {}
