@@ -1,9 +1,9 @@
+
 import asyncio
 import logging
 from aiogram import Dispatcher, Bot
 from config_data.config import load_config, Config
 from handlers import user_handlers, other_hendlers
-from handlers.user_handlers import Router
 from keyboards.set_menu_keyboard import set_main_menu
 
 logger = logging.getLogger(__name__)
@@ -33,7 +33,7 @@ async def main():
     await dp.start_polling(bot)
     await set_main_menu(bot)
 
-
+# пробуем создать функцию вывода апдейта
 
 asyncio.run(main())
 

@@ -4,11 +4,13 @@ from lexicon.lexicon_ru import LEXICON
 
 
 # Создаем функцию генерирующую клавиатуру на странице книги
-def create_pagination_keyboard(*buttons:str)-> InlineKeyboardMarkup:
+def create_pagination_keyboard(*buttons: str) -> InlineKeyboardMarkup:
     # Создаем объект клавиатуры
     kb_builder = InlineKeyboardBuilder()
     # ДОобавдяем в билдер ряд с кнопками
-    kb_builder.row(*[InlineKeyboardButton(text=LEXICON[button] if button in LEXICON else button, callback_data=button) for button in buttons]
+    kb_builder.row(*[InlineKeyboardButton(
+        text=LEXICON[button] if button in LEXICON else button,
+        callback_data=button) for button in buttons]
                    )
     # Возвращаем объект инлайн-клавиатуры
     return kb_builder.as_markup()

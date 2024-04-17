@@ -11,6 +11,7 @@ BOOK_SIZE = 1050
 book: dict[int, str] = {}
 
 
+
 # Функция, возвращающая строку с текстом страницы и ее размер
 def _get_part_text(text: str, start: int, size: int) -> tuple[str, int]:
     end_point = ',.!:;?'
@@ -34,6 +35,8 @@ def prepare_book(path: str) -> None:
            start += page_size
            book[page_number] = page_text.strip()
            page_number += 1
+
+
 
 
 # Вызов функции prepare_book для подготовки книги из текстового файла
